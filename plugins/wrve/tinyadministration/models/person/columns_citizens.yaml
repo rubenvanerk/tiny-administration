@@ -4,8 +4,8 @@ columns:
         relation: user
         select: name
         searchable: true
-    hometown_name:
-        label: Woonplaats
-        relation: hometown
-        select: name
-        searchable: true
+        type: partial
+        path: $/wrve/tinyadministration/models/person/_column_name.htm
+    donor_since:
+        label: Donateur
+        type: switch
