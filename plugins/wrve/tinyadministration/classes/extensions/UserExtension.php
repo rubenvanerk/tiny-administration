@@ -9,6 +9,10 @@ trait UserExtension
     {
         User::extend(function ($userModel) {
             $userModel->hasOne['person'] = [Person::class];
+
+            $userModel->addDynamicMethod('getFullNameAttribute', function () use ($userModel) {
+                return $userModel->name . ' ' . $userModel->surname;
+            });
         });
     }
 }

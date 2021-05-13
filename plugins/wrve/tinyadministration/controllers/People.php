@@ -5,8 +5,8 @@ use BackendMenu;
 use Backend\Behaviors\ListController;
 use Backend\Behaviors\FormController;
 use Str;
-use ValidationException;
 use Winter\User\Models\User;
+use WRvE\TinyAdministration\Models\Person;
 
 class People extends Controller
 {
@@ -21,6 +21,12 @@ class People extends Controller
     {
         parent::__construct();
         BackendMenu::setContext('WRvE.TinyAdministration', 'administration', 'people');
+    }
+
+    public function index()
+    {
+        parent::index();
+        $this->vars['people'] = Person::all();
     }
 
     public function formExtendModel($model)
