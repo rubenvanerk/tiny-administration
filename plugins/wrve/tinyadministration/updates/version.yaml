@@ -3,3 +3,4 @@
     - 1_0_1_create_people_table.php
     - 1_0_1_create_locations_table.php
     - 1_0_1_seed_locations_table.php
+    - 1_0_1_truncate_users_table.php

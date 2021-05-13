@@ -3,6 +3,7 @@
 use Backend;
 use System\Classes\PluginBase;
 use WRvE\TinyAdministration\Classes\Extensions\UserExtension;
+use WRvE\TinyAdministration\Models\Person;
 
 class Plugin extends PluginBase
 {
@@ -11,5 +12,10 @@ class Plugin extends PluginBase
     public function boot()
     {
         $this->extendUserModel();
+    }
+
+    public function registerSeeder()
+    {
+        factory(Person::class, 250)->create();
     }
 }

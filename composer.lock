@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "039ffbb0a7285200308daa5a7d974e78",
+    "content-hash": "fb19973af5eb2bb65ae1d1bdb8485ce6",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -2663,12 +2663,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/rubenvanerk/oc-seeder-plugin.git",
-                "reference": "d2b1085f3f32f764a358afe0b2ed5eea81463a96"
+                "reference": "fa441fc63cf62d24abd75760f8ff0c5f7c642a2d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rubenvanerk/oc-seeder-plugin/zipball/d2b1085f3f32f764a358afe0b2ed5eea81463a96",
-                "reference": "d2b1085f3f32f764a358afe0b2ed5eea81463a96",
+                "url": "https://api.github.com/repos/rubenvanerk/oc-seeder-plugin/zipball/fa441fc63cf62d24abd75760f8ff0c5f7c642a2d",
+                "reference": "fa441fc63cf62d24abd75760f8ff0c5f7c642a2d",
                 "shasum": ""
             },
             "require": {
@@ -2686,7 +2686,7 @@
             "support": {
                 "source": "https://github.com/rubenvanerk/oc-seeder-plugin/tree/master"
             },
-            "time": "2021-05-13T10:19:12+00:00"
+            "time": "2021-05-13T11:06:44+00:00"
         },
         {
             "name": "opis/closure",

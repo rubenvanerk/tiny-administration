@@ -15,7 +15,7 @@ class Person extends Model
     use Validation;
     use SoftDelete;
 
-    protected $dates = ['deleted_at'];
+    protected $dates = ['deleted_at', 'donor_since'];
 
     /**
      * @var string The database table used by the model.
@@ -28,6 +28,8 @@ class Person extends Model
     public $rules = [
         'location_id' => ['nullable', 'exists:wrve_tinyadministration_locations,id'],
     ];
+
+    protected $fillable = ['donor_since'];
 
     public $belongsTo = [
         'user' => User::class,
@@ -46,25 +48,27 @@ class Person extends Model
 
     public function beforeValidate(): void
     {
-        if (!$this->user->name) {
+        if ($this->user && !$this->user->name) {
             throw new ValidationException(['user[name]' => 'Voornaam is verplicht']);
         }
 
-        if (!$this->user->name) {
+        if ($this->user && !$this->user->name) {
             throw new ValidationException(['user[surname]' => 'Achternaam is verplicht']);
         }
 
-        if (!$this->user->name) {
+        if ($this->user && !$this->user->name) {
             throw new ValidationException(['user[email]' => 'E-mailadres is verplicht']);
         }
     }
 
     public function beforeSave(): void
     {
-        if ($this->is_donor && !strtotime($this->donor_since)) {
-            $this->donor_since = Carbon::now();
-        } else {
-            $this->donor_since = null;
+        if (!strtotime($this->donor_since)) {
+            if ($this->is_donor && !strtotime($this->donor_since)) {
+                $this->donor_since = Carbon::now();
+            } else {
+                $this->donor_since = null;
+            }
         }
         unset($this->is_donor);
     }
