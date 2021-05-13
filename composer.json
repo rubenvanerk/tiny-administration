@@ -87,11 +87,6 @@
             "merge-dev": false
         }
     },
-    "config": {
-        "platform": {
-            "php": "8.0"
-        }
-    },
     "repositories": [
         {
             "type": "vcs",
