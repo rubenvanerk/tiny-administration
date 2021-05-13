@@ -1,0 +1,17 @@
+plugin:
+    name: 'wrve.tinyadministration::lang.plugin.name'
+    description: 'System to keep track of people that are interested in living in a tiny house'
+    author: 'Ruben van Erk'
+    icon: oc-icon-home
+    homepage: 'https://github.com/rubenvanerk/oc-tiny-administration'
+permissions:
+    wrve.tinyadministration.access_people:
+        tab: 'wrve.tinyadministration::lang.plugin.name'
+        label: 'Personen beheren'
+navigation:
+    administration:
+        label: Geïnteresseerden
+        url: /wrve/tinyadministration/people
+        icon: icon-users
+        permissions:
+            - wrve.tinyadministration.access_people

@@ -1,0 +1,10 @@
+name: Geïnteresseerde
+form: $/wrve/tinyadministration/models/person/fields.yaml
+modelClass: WRvE\TinyAdministration\Models\Person
+defaultRedirect: wrve/tinyadministration/people
+create:
+    redirect: 'wrve/tinyadministration/people/update/:id'
+    redirectClose: wrve/tinyadministration/people
+update:
+    redirect: wrve/tinyadministration/people
+    redirectClose: wrve/tinyadministration/people

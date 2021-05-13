@@ -1,0 +1,5 @@
+columns:
+    name_user:
+        label: Naam
+        relation: user
+        select: name

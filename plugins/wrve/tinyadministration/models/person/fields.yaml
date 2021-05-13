@@ -1,0 +1,16 @@
+fields:
+    user[name]:
+        label: Voornaam
+        span: auto
+        type: text
+        required: true
+    user[surname]:
+        label: Achternaam
+        span: auto
+        type: text
+        required: true
+    user[email]:
+        label: E-mailadres
+        span: auto
+        type: email
+        required: true

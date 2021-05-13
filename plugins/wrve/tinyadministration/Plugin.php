@@ -2,21 +2,14 @@
 
 use Backend;
 use System\Classes\PluginBase;
+use WRvE\TinyAdministration\Classes\Extensions\UserExtension;
 
 class Plugin extends PluginBase
 {
-    /**
-     * Returns information about this plugin.
-     *
-     * @return array
-     */
-    public function pluginDetails()
+    use UserExtension;
+
+    public function boot()
     {
-        return [
-            'name'        => 'TinyAdministration',
-            'description' => 'System to keep track of people that are interested in living in a tiny house',
-            'author'      => 'WRvE',
-            'icon'        => 'icon-home'
-        ];
+        $this->extendUserModel();
     }
 }

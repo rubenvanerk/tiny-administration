@@ -1,1 +1,4 @@
-1.0.1: First version of TinyAdministration
+1.0.1: 'First version of TinyAdministration'
+1.0.2:
+    - 'Created table wrve_tinyadministration_people'
+    - 1_0_2_create_people_table.php
