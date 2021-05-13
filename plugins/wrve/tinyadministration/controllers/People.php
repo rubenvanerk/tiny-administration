@@ -39,4 +39,9 @@ class People extends Controller
 
         return $model;
     }
+
+    public function listExtendQuery($query)
+    {
+        $query->with('user', 'hometown');
+    }
 }

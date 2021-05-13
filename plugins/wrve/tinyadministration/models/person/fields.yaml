@@ -24,6 +24,11 @@ fields:
         type: switch
         on: Ja
         off: Nee
+    preferred_locations:
+        label: Geinteresseerd in locaties
+        type: taglist
+        mode: relation
+        span: auto
     donor_since:
         label: Sinds
         span: left
