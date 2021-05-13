@@ -9,3 +9,6 @@ columns:
         relation: hometown
         select: name
         searchable: true
+    donor_since:
+        label: Donateur
+        type: switch
