@@ -1,0 +1,20 @@
+people:
+    label: Geïnteresseerden
+    view:
+        list: $/wrve/tinyadministration/models/person/columns.yaml
+        recordsPerPage: 15
+        showSearch: true
+        defaultSort:
+            column: user[name]
+            direction: asc
+
+citizens:
+    label: Inwoners
+    view:
+        list: $/wrve/tinyadministration/models/person/columns_citizens.yaml
+        recordsPerPage: 15
+        showSearch: true
+        defaultSort:
+            column: user[name]
+            direction: asc
+

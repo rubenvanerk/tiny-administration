@@ -1,0 +1,10 @@
+name: Locaties
+form: $/wrve/tinyadministration/models/location/fields.yaml
+modelClass: WRvE\TinyAdministration\Models\Location
+defaultRedirect: wrve/tinyadministration/locations
+create:
+    redirect: 'wrve/tinyadministration/locations/update/:id'
+    redirectClose: wrve/tinyadministration/locations
+update:
+    redirect: wrve/tinyadministration/locations
+    redirectClose: wrve/tinyadministration/locations

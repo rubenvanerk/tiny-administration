@@ -25,9 +25,23 @@ class Person extends Model
      * @var array Validation rules
      */
     public $rules = [
+        'location_id' => ['nullable', 'exists:wrve_tinyadministration_locations,id'],
     ];
 
-    public $belongsTo = ['user' => User::class];
+    public $belongsTo = [
+        'user' => User::class,
+        'hometown' => [
+            Location::class,
+            'key' => 'location_id',
+        ],
+    ];
+
+    public $belongsToMany = [
+        'preferred_locations' => [
+            Location::class,
+            'table' => 'wrve_tinyadministration_location_person',
+        ],
+    ];
 
     public function beforeValidate()
     {

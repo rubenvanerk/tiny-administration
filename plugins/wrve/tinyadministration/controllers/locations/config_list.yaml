@@ -1,0 +1,13 @@
+list: $/wrve/tinyadministration/models/location/columns.yaml
+modelClass: WRvE\TinyAdministration\Models\Location
+title: Locaties
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'wrve/tinyadministration/locations/update/:id'
+showTree: true
+treeExpanded: true

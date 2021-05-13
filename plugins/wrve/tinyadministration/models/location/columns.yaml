@@ -1,0 +1,13 @@
+columns:
+    name:
+        label: Naam
+        type: text
+        searchable: true
+    people_count:
+        label: Geïnteresseerden
+        relation: people
+        useRelationCount: true
+    citizen_count:
+        label: Inwoners
+        relation: citizens
+        useRelationCount: true

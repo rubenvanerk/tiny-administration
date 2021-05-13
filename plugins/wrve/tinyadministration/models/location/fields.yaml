@@ -1,0 +1,18 @@
+fields:
+    name:
+        label: Naam
+        span: auto
+        type: text
+
+tabs:
+    fields:
+        people:
+            tab: Geïnteresseerden
+            type: partial
+            path: $/wrve/tinyadministration/views/partials/relation.htm
+            readOnly: true
+        citizens:
+            tab: Inwoners
+            type: partial
+            path: $/wrve/tinyadministration/views/partials/relation.htm
+            readOnly: true

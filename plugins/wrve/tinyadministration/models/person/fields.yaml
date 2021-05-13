@@ -14,3 +14,7 @@ fields:
         span: auto
         type: email
         required: true
+    hometown:
+        label: Woonplaats
+        span: auto
+        type: relation

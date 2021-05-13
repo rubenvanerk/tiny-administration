@@ -15,14 +15,12 @@ class People extends Controller
     public $listConfig = 'config_list.yaml';
     public $formConfig = 'config_form.yaml';
 
-    public $requiredPermissions = [
-        'wrve.tinyadministration.access_people'
-    ];
+    public $requiredPermissions = ['wrve.tinyadministration.access_people'];
 
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('WRvE.TinyAdministration', 'administration');
+        BackendMenu::setContext('WRvE.TinyAdministration', 'administration', 'people');
     }
 
     public function formExtendModel($model)

@@ -8,10 +8,26 @@ permissions:
     wrve.tinyadministration.access_people:
         tab: 'wrve.tinyadministration::lang.plugin.name'
         label: 'Personen beheren'
+    wrve.tinyadministration.access_locations:
+        tab: 'wrve.tinyadministration::lang.plugin.name'
+        label: 'Locaties beheren'
 navigation:
     administration:
-        label: Geïnteresseerden
-        url: /wrve/tinyadministration/people
-        icon: icon-users
+        label: Administratie
+        url: wrve/tinyadministration/people
+        icon: icon-folder-open
         permissions:
             - wrve.tinyadministration.access_people
+        sideMenu:
+            people:
+                label: Geïnteresseerden
+                url: wrve/tinyadministration/people
+                icon: icon-users
+                permissions:
+                    - wrve.tinyadministration.access_people
+            locations:
+                label: Locaties
+                url: wrve/tinyadministration/locations
+                icon: icon-map-marker
+                permissions:
+                    - wrve.tinyadministration.access_locations
