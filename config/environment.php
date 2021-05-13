@@ -28,6 +28,7 @@ return [
 
     'hosts' => [
         'localhost:8000' => 'dev',
+        'tiny.wrve.nl' => 'staging',
     ],
 
 ];
