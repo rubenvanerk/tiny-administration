@@ -1,18 +1,20 @@
-<div class="scoreboard">
-    <div data-control="toolbar">
+<?php if ($people->count()): ?>
+    <div class="scoreboard">
+        <div data-control="toolbar">
 
-        <?php $percentage = round($people->whereNotNull('donor_since')->count() / $people->count() * 100) ?>
-        <div class="scoreboard-item title-value" data-control="goal-meter" data-value="<?= $percentage ?>">
-            <h4>donateurs</h4>
-            <p><?= $percentage ?>%</p>
-            <p class="description">van de in totaal <?= $people->count() ?> geïnteresseerden</p>
-        </div>
+            <?php $percentage = round($people->whereNotNull('donor_since')->count() / $people->count() * 100) ?>
+            <div class="scoreboard-item title-value" data-control="goal-meter" data-value="<?= $percentage ?>">
+                <h4>donateurs</h4>
+                <p><?= $percentage ?>%</p>
+                <p class="description">van de in totaal <?= $people->count() ?> geïnteresseerden</p>
+            </div>
 
-        <?php $latestDonor = $people->sortByDesc('donor_since')->first() ?>
-        <div class="scoreboard-item title-value">
-            <h4>Nieuwste donateur</h4>
-            <p class="oc-icon-star"><?= $latestDonor->user->full_name ?></p>
-            <p class="description"><?= $latestDonor->donor_since->isoFormat('LL') ?></p>
+            <?php $latestDonor = $people->sortByDesc('donor_since')->first() ?>
+            <div class="scoreboard-item title-value">
+                <h4>Nieuwste donateur</h4>
+                <p class="oc-icon-star"><?= $latestDonor->user->full_name ?></p>
+                <p class="description"><?= $latestDonor->donor_since->isoFormat('LL') ?></p>
+            </div>
         </div>
     </div>
-</div>
+<?php endif; ?>

@@ -2663,12 +2663,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/rubenvanerk/oc-seeder-plugin.git",
-                "reference": "fa441fc63cf62d24abd75760f8ff0c5f7c642a2d"
+                "reference": "27bd0dea4a897adc66e1ac1e9cd330b9e2f12683"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rubenvanerk/oc-seeder-plugin/zipball/fa441fc63cf62d24abd75760f8ff0c5f7c642a2d",
-                "reference": "fa441fc63cf62d24abd75760f8ff0c5f7c642a2d",
+                "url": "https://api.github.com/repos/rubenvanerk/oc-seeder-plugin/zipball/27bd0dea4a897adc66e1ac1e9cd330b9e2f12683",
+                "reference": "27bd0dea4a897adc66e1ac1e9cd330b9e2f12683",
                 "shasum": ""
             },
             "require": {
@@ -2686,7 +2686,7 @@
             "support": {
                 "source": "https://github.com/rubenvanerk/oc-seeder-plugin/tree/master"
             },
-            "time": "2021-05-13T11:06:44+00:00"
+            "time": "2021-05-13T12:59:42+00:00"
         },
         {
             "name": "opis/closure",
