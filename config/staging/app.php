@@ -42,6 +42,6 @@ return [
     | on the Backend password reset flow for security reasons.
     */
 
-    'trustedHosts' => 'tiny.wrve.nl',
+    'trustedHosts' => true,
 
 ];
