@@ -1,0 +1,50 @@
+description = "Default layout"
+==
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <meta charset="utf-8">
+        <title>Mijn Tiny House Drechtsteden - {{ this.page.title }}</title>
+        <meta name="description" content="{{ this.page.meta_description }}">
+        <meta name="title" content="{{ this.page.meta_title }}">
+        <meta name="author" content="Ruben van Erk">
+        <meta name="viewport" content="width=device-width">
+        <meta name="generator" content="Winter CMS">
+        <link rel="icon" type="image/png" href="{{ 'assets/images/favicon.ico'|theme }}">
+        <link rel="icon" href="{{ 'assets/images/favicon.svg'|theme }}" type="image/svg+xml">
+        <link rel="apple-touch-icon" href="{{ 'assets/images/apple_favicon.png'|theme }}" />
+        <meta name="theme-color" content="#776c5c">
+
+        <meta name="description" content="{{ this.page.meta_description }}">
+        <meta property="og:title" content="Mijn Tiny House Drechtsteden - {{ this.page.title }}">
+        <meta property="og:description" content="{{ this.page.meta_description }}">
+        <meta property="og:locale" content="nl_NL">
+        <meta property="og:type" content="website">
+
+        <link href="{{ 'assets/css/theme.css'|theme }}" rel="stylesheet">
+        {% styles %}
+    </head>
+    <body>
+
+        <!-- Header -->
+        <header id="layout-header">
+            {% partial 'site/header' %}
+        </header>
+
+        <!-- Content -->
+        <section id="layout-content">
+            {% page %}
+        </section>
+
+        <!-- Footer -->
+        <footer id="layout-footer">
+            {% partial 'site/footer' %}
+        </footer>
+
+        <!-- Scripts -->
+        <script src="{{ 'assets/javascript/app.js'|theme }}"></script>
+        {% framework extras %}
+        {% scripts %}
+
+    </body>
+</html>
