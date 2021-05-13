@@ -3,6 +3,11 @@ fields:
         label: Naam
         span: auto
         type: text
+    parent:
+        label: Gemeente
+        span: auto
+        type: relation
+        emptyOption: ---
 
 tabs:
     fields:
