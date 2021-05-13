@@ -15,10 +15,8 @@ return [
     */
 
     'ses' => [
-        'key' => '',
-        'secret' => '',
-        'region' => 'us-east-1',
+        'key' => env('SERVICE_SES_KEY'),
+        'secret' => env('SERVICE_SES_SECRET'),
+        'region' => env('SERVICE_SES_REGION'),
     ],
-
-
 ];
