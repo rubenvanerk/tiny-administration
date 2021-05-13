@@ -7,8 +7,7 @@ class BuilderTableCreateWrveTinyadministrationLocations extends Migration
 {
     public function up()
     {
-        Schema::create('wrve_tinyadministration_locations', function($table)
-        {
+        Schema::create('wrve_tinyadministration_locations', function ($table) {
             $table->engine = 'InnoDB';
             $table->increments('id')->unsigned();
             $table->timestamp('created_at')->nullable();
@@ -18,8 +17,7 @@ class BuilderTableCreateWrveTinyadministrationLocations extends Migration
             $table->integer('parent_id')->nullable()->unsigned()->index();
         });
 
-        Schema::create('wrve_tinyadministration_location_person', function($table)
-        {
+        Schema::create('wrve_tinyadministration_location_person', function ($table) {
             $table->engine = 'InnoDB';
             $table->increments('id')->unsigned();
             $table->timestamp('created_at')->nullable();
@@ -33,5 +31,6 @@ class BuilderTableCreateWrveTinyadministrationLocations extends Migration
     public function down()
     {
         Schema::dropIfExists('wrve_tinyadministration_locations');
+        Schema::dropIfExists('wrve_tinyadministration_location_person');
     }
 }

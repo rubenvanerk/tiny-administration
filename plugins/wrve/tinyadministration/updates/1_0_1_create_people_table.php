@@ -7,8 +7,7 @@ class BuilderTableCreateWrveTinyadministrationPeople extends Migration
 {
     public function up()
     {
-        Schema::create('wrve_tinyadministration_people', function($table)
-        {
+        Schema::create('wrve_tinyadministration_people', function ($table) {
             $table->engine = 'InnoDB';
             $table->increments('id')->unsigned();
             $table->timestamp('created_at')->nullable();
@@ -16,6 +15,7 @@ class BuilderTableCreateWrveTinyadministrationPeople extends Migration
             $table->timestamp('deleted_at')->nullable();
             $table->integer('user_id')->index()->unsigned();
             $table->integer('location_id')->index()->unsigned();
+            $table->datetime('donor_since')->nullable();
         });
     }
 

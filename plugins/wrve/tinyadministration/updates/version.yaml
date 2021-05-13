@@ -1,6 +1,5 @@
-1.0.1: 'First version of TinyAdministration'
-1.0.2:
-    - 'Create base tables'
-    - 1_0_2_create_people_table.php
-    - 1_0_2_create_locations_table.php
-    - 1_0_2_seed_locations_table.php
+1.0.1:
+    - 'First version of TinyAdministration'
+    - 1_0_1_create_people_table.php
+    - 1_0_1_create_locations_table.php
+    - 1_0_1_seed_locations_table.php

@@ -18,3 +18,9 @@ fields:
         label: Woonplaats
         span: auto
         type: relation
+    is_donor:
+        label: Donateur
+        span: auto
+        type: switch
+        on: Ja
+        off: Nee

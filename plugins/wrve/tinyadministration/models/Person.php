@@ -1,5 +1,6 @@
 <?php namespace WRvE\TinyAdministration\Models;
 
+use Carbon\Carbon;
 use Model;
 use ValidationException;
 use Winter\Storm\Database\Traits\SoftDelete;
@@ -55,6 +56,23 @@ class Person extends Model
 
         if (!$this->user->name) {
             throw new ValidationException(['user[email]' => 'E-mailadres is verplicht']);
+        }
+    }
+
+    public function beforeSave()
+    {
+        if ($this->is_donor && !strtotime($this->donor_since)) {
+            $this->donor_since = Carbon::now();
+        } else {
+            $this->donor_since = null;
+        }
+        unset($this->is_donor);
+    }
+
+    public function filterFields($fields, $context = null)
+    {
+        if (strtotime($this->donor_since) !== false) {
+            $fields->is_donor->value = true;
         }
     }
 }
