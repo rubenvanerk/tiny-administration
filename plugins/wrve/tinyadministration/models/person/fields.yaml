@@ -18,9 +18,20 @@ fields:
         label: Woonplaats
         span: auto
         type: relation
-    is_donor:
+    _is_donor:
         label: Donateur
         span: auto
         type: switch
         on: Ja
         off: Nee
+    donor_since:
+        label: Sinds
+        span: left
+        type: datepicker
+        mode: date
+        cssClass: field-indent
+        default: now
+        trigger:
+            field: _is_donor
+            condition: unchecked
+            action: hide

@@ -15,7 +15,7 @@ class BuilderTableCreateWrveTinyadministrationPeople extends Migration
             $table->timestamp('deleted_at')->nullable();
             $table->integer('user_id')->index()->unsigned();
             $table->integer('location_id')->index()->unsigned();
-            $table->datetime('donor_since')->nullable();
+            $table->date('donor_since')->nullable();
         });
     }
 

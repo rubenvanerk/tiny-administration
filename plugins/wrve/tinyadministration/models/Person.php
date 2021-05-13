@@ -61,22 +61,12 @@ class Person extends Model
         }
     }
 
-    public function beforeSave(): void
-    {
-        if (!strtotime($this->donor_since)) {
-            if ($this->is_donor && !strtotime($this->donor_since)) {
-                $this->donor_since = Carbon::now();
-            } else {
-                $this->donor_since = null;
-            }
-        }
-        unset($this->is_donor);
-    }
-
     public function filterFields($fields, $context = null): void
     {
         if (strtotime($this->donor_since) !== false) {
-            $fields->is_donor->value = true;
+            $fields->_is_donor->value = true;
+        } else {
+            $fields->donor_since->value = now();
         }
     }
 
