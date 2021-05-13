@@ -5,3 +5,8 @@ scopes:
         conditions:
             - donor_since IS NULL
             - donor_since IS NOT NULL
+    hometown:
+        label: Woonplaats
+        type: group
+        modelClass: WRvE\TinyAdministration\Models\Location
+        scope: hometownTree

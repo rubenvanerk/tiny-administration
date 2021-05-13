@@ -44,7 +44,7 @@ class Person extends Model
         ],
     ];
 
-    public function beforeValidate()
+    public function beforeValidate(): void
     {
         if (!$this->user->name) {
             throw new ValidationException(['user[name]' => 'Voornaam is verplicht']);
@@ -59,7 +59,7 @@ class Person extends Model
         }
     }
 
-    public function beforeSave()
+    public function beforeSave(): void
     {
         if ($this->is_donor && !strtotime($this->donor_since)) {
             $this->donor_since = Carbon::now();
@@ -69,10 +69,20 @@ class Person extends Model
         unset($this->is_donor);
     }
 
-    public function filterFields($fields, $context = null)
+    public function filterFields($fields, $context = null): void
     {
         if (strtotime($this->donor_since) !== false) {
             $fields->is_donor->value = true;
         }
+    }
+
+    public function scopeHometownTree($query, $locationIds): void
+    {
+        $query->whereHas('hometown', function ($query) use ($locationIds) {
+            $query->whereIn('id', $locationIds)
+                ->orWhereHas('parent', function ($query) use ($locationIds) {
+                    $query->whereIn('id', $locationIds);
+                });
+        });
     }
 }
