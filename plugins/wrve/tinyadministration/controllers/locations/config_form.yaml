@@ -1,4 +1,4 @@
-name: Locaties
+name: Locatie
 form: $/wrve/tinyadministration/models/location/fields.yaml
 modelClass: WRvE\TinyAdministration\Models\Location
 defaultRedirect: wrve/tinyadministration/locations
