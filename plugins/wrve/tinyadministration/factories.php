@@ -7,7 +7,8 @@ use WRvE\TinyAdministration\Models\Person;
 /** @var $factory Illuminate\Database\Eloquent\Factory */
 $factory->define(Person::class, function (\OFFLINE\Seeder\Classes\Generator $faker) {
     return [
-        'donor_since' => $faker->boolean(33) ? $faker->dateTimeThisDecade : null,
+        'created_at' => $faker->dateTimeThisYear,
+        'donor_since' => $faker->boolean(33) ? $faker->dateTimeThisYear : null,
         'location_id' => Location::doesntHave('children')->inRandomOrder()->first()->id,
         'user_id' => function () {
             return factory(User::class);

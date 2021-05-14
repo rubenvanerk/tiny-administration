@@ -26,7 +26,19 @@ class People extends Controller
     public function index()
     {
         parent::index();
-        $this->vars['people'] = Person::all();
+        $this->vars['people'] = $people = Person::all();
+        $this->vars['newPeopleThisPeriod'] = $people->filter(function ($person) {
+            return $person->created_at >= now()->subMonth();
+        })->count();
+        $this->vars['newPeoplePreviousPeriod'] = $people->filter(function ($person) {
+            return $person->created_at < now()->subMonth() && $person->created_at > now()->subMonths(2);
+        })->count();
+        $this->vars['newDonorsThisPeriod'] = $people->filter(function ($person) {
+            return $person->donor_since >= now()->subMonth();
+        })->count();
+        $this->vars['newDonorsPreviousPeriod'] = $people->filter(function ($person) {
+            return $person->donor_since < now()->subMonth() && $person->donor_since > now()->subMonths(2);
+        })->count();
     }
 
     public function formExtendModel($model)

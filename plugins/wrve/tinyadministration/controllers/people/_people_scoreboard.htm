@@ -2,6 +2,18 @@
     <div class="scoreboard">
         <div data-control="toolbar">
 
+            <div class="scoreboard-item title-value">
+                <h4>Nieuwe geïnteresseerden (30d)</h4>
+                <p class="<?= $newPeopleThisPeriod >= $newPeoplePreviousPeriod ? 'positive' : 'negative' ?>"><?= $newPeopleThisPeriod ?></p>
+                <p class="description">vorige periode: <?= $newPeoplePreviousPeriod ?></p>
+            </div>
+
+            <div class="scoreboard-item title-value">
+                <h4>Nieuwe donateurs (30d)</h4>
+                <p class="<?= $newDonorsThisPeriod >= $newDonorsPreviousPeriod ? 'positive' : 'negative' ?>"><?= $newDonorsThisPeriod ?></p>
+                <p class="description">vorige periode: <?= $newDonorsPreviousPeriod ?></p>
+            </div>
+
             <?php $percentage = round($people->whereNotNull('donor_since')->count() / $people->count() * 100) ?>
             <div class="scoreboard-item title-value" data-control="goal-meter" data-value="<?= $percentage ?>">
                 <h4>donateurs</h4>
@@ -15,6 +27,7 @@
                 <p class="oc-icon-star"><?= $latestDonor->user->full_name ?></p>
                 <p class="description"><?= $latestDonor->donor_since->isoFormat('LL') ?></p>
             </div>
+
         </div>
     </div>
 <?php endif; ?>

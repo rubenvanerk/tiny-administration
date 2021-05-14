@@ -50,9 +50,4 @@ class Location extends Model
             'table' => 'wrve_tinyadministration_location_person',
         ],
     ];
-
-//    public function sortedOptions(): array
-//    {
-//        return Location::orderBy('name', 'asc')->lists('name', 'id');
-//    }
 }
