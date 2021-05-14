@@ -7,7 +7,5 @@ columns:
         label: Geïnteresseerden
         relation: people
         useRelationCount: true
-    citizen_count:
+    citizens_count:
         label: Inwoners
-        relation: citizens
-        useRelationCount: true

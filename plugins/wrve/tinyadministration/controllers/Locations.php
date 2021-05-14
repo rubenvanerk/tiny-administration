@@ -5,6 +5,7 @@ use Backend\Classes\Controller;
 use BackendMenu;
 use Backend\Behaviors\ListController;
 use Backend\Behaviors\FormController;
+use Winter\Storm\Database\Builder;
 
 class Locations extends Controller
 {
@@ -20,5 +21,10 @@ class Locations extends Controller
     {
         parent::__construct();
         BackendMenu::setContext('WRvE.TinyAdministration', 'administration', 'locations');
+    }
+
+    public function listExtendQuery(Builder $query)
+    {
+        $query->withCount(['citizens', 'people']);
     }
 }

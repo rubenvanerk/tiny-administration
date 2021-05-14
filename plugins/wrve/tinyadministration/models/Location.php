@@ -51,8 +51,27 @@ class Location extends Model
         ],
     ];
 
-//    public function sortedOptions(): array
-//    {
-//        return Location::orderBy('name', 'asc')->lists('name', 'id');
-//    }
+    public function getPeopleCountAttribute($value)
+    {
+        if (!is_null($value) && !$this->children->count()) {
+            return $value;
+        }
+        $childrenIds = $this->children->pluck('id');
+        $locationIds = $childrenIds->add($this->id);
+        return Person::whereHas('preferred_locations', function (Builder $query) use ($locationIds) {
+            $query->whereIn('wrve_tinyadministration_locations.id', $locationIds);
+        })->count();
+    }
+
+    public function getCitizensCountAttribute($value)
+    {
+        if (!is_null($value) && !$this->children->count()) {
+            return $value;
+        }
+        $childrenIds = $this->children->pluck('id');
+        $locationIds = $childrenIds->add($this->id);
+        return Person::whereHas('hometown', function (Builder $query) use ($locationIds) {
+            $query->whereIn('wrve_tinyadministration_locations.id', $locationIds);
+        })->count();
+    }
 }
