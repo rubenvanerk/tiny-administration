@@ -7,6 +7,7 @@ people:
         defaultSort:
             column: user[name]
             direction: asc
+        filter: donor_filter.yaml
 
 citizens:
     label: Inwoners
@@ -17,4 +18,4 @@ citizens:
         defaultSort:
             column: user[name]
             direction: asc
-
+        filter: donor_filter.yaml

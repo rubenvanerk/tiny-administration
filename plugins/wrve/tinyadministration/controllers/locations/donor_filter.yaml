@@ -1,0 +1,7 @@
+scopes:
+    donor:
+        label: Donateur
+        type: switch
+        conditions:
+            - donor_since IS NULL
+            - donor_since IS NOT NULL

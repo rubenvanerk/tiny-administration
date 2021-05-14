@@ -1,6 +1,5 @@
 <?php namespace WRvE\TinyAdministration;
 
-use Backend;
 use System\Classes\PluginBase;
 use WRvE\TinyAdministration\Classes\Extensions\UserExtension;
 use WRvE\TinyAdministration\Models\Location;
