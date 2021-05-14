@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'backendTimezone' => 'CET',
+    'backendTimezone' => 'Europe/Amsterdam',
 
     /*
     |--------------------------------------------------------------------------
