@@ -1,7 +1,7 @@
 people:
     label: Geïnteresseerden
     view:
-        list: $/wrve/tinyadministration/models/person/columns.yaml
+        list: $/wrve/tinyadministration/models/person/columns_interested.yaml
         recordsPerPage: 15
         showSearch: true
         defaultSort:

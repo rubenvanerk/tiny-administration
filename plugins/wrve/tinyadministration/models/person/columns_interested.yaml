@@ -6,10 +6,11 @@ columns:
         searchable: true
         type: partial
         path: $/wrve/tinyadministration/models/person/_column_name.htm
-    preferred_location_names:
-        label: Geïnteresseerd in
-        relation: preferred_locations
+    hometown_name:
+        label: Woonplaats
+        relation: hometown
         select: name
+        searchable: true
     donor_since:
         label: Donateur
         type: switch
