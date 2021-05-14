@@ -2,6 +2,7 @@
 
 use Model;
 use October\Rain\Database\Traits\SimpleTree;
+use Winter\Storm\Database\Builder;
 use Winter\Storm\Database\Traits\SoftDelete;
 use Winter\Storm\Database\Traits\Validation;
 
@@ -13,6 +14,15 @@ class Location extends Model
     use Validation;
     use SoftDelete;
     use SimpleTree;
+
+    protected static function boot(): void
+    {
+        parent::boot();
+
+        static::addGlobalScope('age', function (Builder $builder) {
+            $builder->orderBy('name');
+        });
+    }
 
     protected $dates = ['deleted_at'];
 
@@ -40,4 +50,9 @@ class Location extends Model
             'table' => 'wrve_tinyadministration_location_person',
         ],
     ];
+
+//    public function sortedOptions(): array
+//    {
+//        return Location::orderBy('name', 'asc')->lists('name', 'id');
+//    }
 }

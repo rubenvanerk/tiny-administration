@@ -79,4 +79,11 @@ class Person extends Model
                 });
         });
     }
+
+    public function scopeInterestedIn($query, $locationIds): void
+    {
+        $query->whereHas('preferred_locations', function ($query) use ($locationIds) {
+            $query->whereIn('wrve_tinyadministration_locations.id', $locationIds);
+        });
+    }
 }

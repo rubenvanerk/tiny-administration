@@ -6,11 +6,21 @@ columns:
         searchable: true
         type: partial
         path: $/wrve/tinyadministration/models/person/_column_name.htm
+    surname_user:
+        label: Achternaam (staat hier zodat er op gezocht kan worden)
+        relation: user
+        select: surname
+        searchable: true
+        invisible: true
     hometown_name:
         label: Woonplaats
         relation: hometown
         select: name
         searchable: true
+    preferred_location_names:
+        label: Geïnteresseerd in
+        relation: preferred_locations
+        select: name
     donor_since:
         label: Donateur
         type: switch

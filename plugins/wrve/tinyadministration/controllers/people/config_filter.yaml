@@ -10,3 +10,8 @@ scopes:
         type: group
         modelClass: WRvE\TinyAdministration\Models\Location
         scope: hometownTree
+    interested_in:
+        label: Geïnteresseerd in
+        type: group
+        modelClass: WRvE\TinyAdministration\Models\Location
+        scope: interestedIn

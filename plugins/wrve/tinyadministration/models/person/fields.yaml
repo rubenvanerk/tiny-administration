@@ -25,7 +25,7 @@ fields:
         on: Ja
         off: Nee
     preferred_locations:
-        label: Geinteresseerd in locaties
+        label: Geïnteresseerd in locaties
         type: taglist
         mode: relation
         span: auto
