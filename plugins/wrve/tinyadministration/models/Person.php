@@ -46,6 +46,13 @@ class Person extends Model
         ],
     ];
 
+    public function afterDelete()
+    {
+        if ($this->user) {
+            $this->user->delete();
+        }
+    }
+
     public function beforeValidate(): void
     {
         if ($this->user && !$this->user->name) {
