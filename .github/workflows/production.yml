@@ -8,7 +8,7 @@ on:
 jobs:
     deploy:
         environment:
-            name: staging
+            name: production
             url: production.thd.wrve.nl
         runs-on: ubuntu-latest
         steps:
