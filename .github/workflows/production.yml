@@ -1,4 +1,4 @@
-name: Deploy to staging environment
+name: Deploy to production environment
 
 on:
     push:
