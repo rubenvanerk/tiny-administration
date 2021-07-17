@@ -5,7 +5,10 @@ on:
         branches: [ main ]
 
 jobs:
-    build:
+    deploy:
+        environment:
+            name: staging
+            url: tiny.wrve.nl
         runs-on: ubuntu-latest
         steps:
             -   name: Deploy
@@ -29,4 +32,3 @@ jobs:
                         php artisan winter:up --env=staging
                         php artisan up --env=staging
                         composer clear-cache
-
